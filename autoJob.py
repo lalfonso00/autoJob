@@ -80,7 +80,7 @@ l = list(filter(None, l))
 allJobListings = {}
 for a in l:
     browser.get(a)
-    #
+
     applyByContainer = WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.ID, 'edfab414adccd8b67f7727e3ae03b85b')))
     deadline = applyByContainer.find_element_by_css_selector(
@@ -122,8 +122,6 @@ for a in l:
     # print(allJobListings)
 
 
-#
-# print(allJobListings)
 with open('json_data.json', 'w') as outfile:
     json.dump(allJobListings, outfile)
 
